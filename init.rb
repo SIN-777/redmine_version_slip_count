@@ -9,6 +9,8 @@ Redmine::Plugin.register :redmine_version_slip_counter do
   author_url 'http://example.com/about'
 end
 
-require File.dirname(__FILE__) + '/lib/version_slip_counter_patch.rb'
-Issue.send(:include, VersionSlipCounterPatch)
+require File.dirname(__FILE__) + '/lib/version_slip_counter_issue_patch.rb'
+require File.dirname(__FILE__) + '/lib/version_slip_counter_journal_patch.rb'
+Issue.send(:include, VersionSlipCounterIssuePatch)
+Journal.send(:include, VersionSlipCounterJournalPatch)
 
