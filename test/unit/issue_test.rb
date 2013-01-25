@@ -9,7 +9,16 @@ class IssueTest < ActiveSupport::TestCase
            :enumerations,
            :issues,
            :custom_fields, :custom_fields_projects, :custom_fields_trackers, :custom_values,
-           :time_entries
+           :time_entries,
+           :journals, :journal_details
+
+  test '自身のjournal_detailsから現在のバージョン変更回数を取得できる' do
+    issue = Issue.first
+    assert_equal 0, issue.get_version_slip_count_by_journals
+
+    issue = Issue.find(6)
+    assert_equal 1, issue.get_version_slip_count_by_journals
+  end
 
   test 'バージョンを変更してsaveするとversion_slip_countが更新される' do
     issue = Issue.first
@@ -42,8 +51,6 @@ class IssueTest < ActiveSupport::TestCase
       issue.save!
     end
   end
-
-
 
 end
 
