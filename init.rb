@@ -1,7 +1,7 @@
 require 'redmine'
 
-Redmine::Plugin.register :redmine_version_slip_counter do
-  name 'Redmine Version Slip Counter plugin'
+Redmine::Plugin.register :redmine_version_slip_count do
+  name 'Redmine Version Slip Count plugin'
   author 'SIN-777'
   description "Count up when issue's fixed_version is slipped."
   version '0.0.1'
@@ -9,8 +9,8 @@ Redmine::Plugin.register :redmine_version_slip_counter do
   author_url 'http://example.com/about'
 end
 
-require File.dirname(__FILE__) + '/lib/version_slip_counter_issue_patch.rb'
-require File.dirname(__FILE__) + '/lib/version_slip_counter_journal_patch.rb'
-Issue.send(:include, VersionSlipCounterIssuePatch)
-Journal.send(:include, VersionSlipCounterJournalPatch)
+require File.dirname(__FILE__) + '/lib/version_slip_count_issue_patch.rb'
+require File.dirname(__FILE__) + '/lib/version_slip_count_journal_patch.rb'
+Issue.send(:include, VersionSlipCountIssuePatch)
+Journal.send(:include, VersionSlipCountJournalPatch)
 

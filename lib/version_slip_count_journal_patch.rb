@@ -1,4 +1,4 @@
-module VersionSlipCounterJournalPatch
+module VersionSlipCountJournalPatch
   def self.included(klass)
     klass.send(:include, InstanceMethods)
     klass.class_eval do
@@ -8,7 +8,7 @@ module VersionSlipCounterJournalPatch
 
   module InstanceMethods
     def update_version_slip_count
-      count = self.issue.journals.map(&:details).select{|detail| detail.any?{|d| d.prop_key == 'fixed_version_id'}}.length
+      count = self.issue.get_version_slip_count_by_journals
       self.issue.version_slip_count = count
       self.issue.save
     end
