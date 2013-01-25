@@ -1,3 +1,0 @@
-= version_slip_counter
-
-Description goes here
