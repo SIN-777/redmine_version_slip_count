@@ -1,0 +1,52 @@
+<p>
+  <table border="1"> 
+    <tr>
+      <th colspan="2">lv0</th>
+    </tr>
+    <tr>
+      <td>
+        0 .. (lv1_start - 1)
+      </td>
+      <td>
+        Class Name: -
+      </td>
+    </tr>
+
+    <tr>
+      <th colspan="2">lv1</th>
+    </tr>
+    <tr>
+      <td>
+        <%= text_field_tag('settings[lv1_start]', @settings['lv1_start'])%> .. (lv2_start - 1)
+      </td>
+      <td>
+        Class Name: <%= text_field_tag('settings[lv1_class]', @settings['lv1_class'])%>
+      </td>
+    </tr>
+
+    <tr>
+      <th colspan="2">lv2</th>
+    </tr>
+    <tr>
+      <td>
+        <%= text_field_tag('settings[lv2_start]', @settings['lv2_start'])%> .. (lv3_start - 1)
+      </td>
+      <td>
+        Class Name: <%= text_field_tag('settings[lv2_class]', @settings['lv2_class'])%>
+      </td>
+    </tr>
+
+    <tr>
+      <th colspan="2">lv3</th>
+    </tr>
+    <tr>
+      <td>
+        <%= text_field_tag('settings[lv3_start]', @settings['lv3_start'])%> .. INFINITY
+      </td>
+      <td>
+        Class Name: <%= text_field_tag('settings[lv3_class]', @settings['lv3_class'])%>
+      </td>
+    </tr>
+
+  </table>
+</p>

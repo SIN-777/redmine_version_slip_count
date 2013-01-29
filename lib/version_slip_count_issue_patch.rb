@@ -11,15 +11,16 @@ module VersionSlipCountIssuePatch
       s = css_classes_without_version_slip_count
       unless status.is_closed?
         s << case version_slip_count
-             when 0..1
-               ''
-             when 2..3
-               ' version-slip-lv-1'
-             when 4..5
-               ' version-slip-lv-2'
+             when 0...Setting.plugin_redmine_version_slip_count[:lv1_start]
+               ""
+             when Setting.plugin_redmine_version_slip_count[:lv1_start]...Setting.plugin_redmine_version_slip_count[:lv2_start]
+               " #{Setting.plugin_redmine_version_slip_count[:lv1_class]}"
+             when Setting.plugin_redmine_version_slip_count[:lv2_start]...Setting.plugin_redmine_version_slip_count[:lv3_start]
+               " #{Setting.plugin_redmine_version_slip_count[:lv2_class]}"
              else
-               ' version-slip-lv-3'
+               " #{Setting.plugin_redmine_version_slip_count[:lv3_class]}"
              end
+
       end
       s
     end
