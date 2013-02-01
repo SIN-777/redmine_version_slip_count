@@ -35,15 +35,13 @@ class IssueTest < ActiveSupport::TestCase
   end
 
 
-  test 'バージョン変更回数が設定"lv1_start"未満のIssueはversion_slip_countで設定される全てのclassを持たない' do
+  test 'issue.css_classesはバージョン変更回数が設定"lv1_start"未満のIssueは設定"lv0_class"のclass名を含む' do
     @settings[:lv1_start].times do |i|
       issue = Issue.first
 
       if i < @settings[:lv1_start]
         assert_equal i, issue.version_slip_count
-        assert_equal false, issue.css_classes.include?(@settings[:lv1_class])
-        assert_equal false, issue.css_classes.include?(@settings[:lv2_class])
-        assert_equal false, issue.css_classes.include?(@settings[:lv3_class])
+        assert issue.css_classes.include?(@settings[:lv0_class])
       end
 
       issue.init_journal(User.first)
@@ -52,7 +50,7 @@ class IssueTest < ActiveSupport::TestCase
     end
   end
 
-  test 'バージョン変更回数が設定"lv1_start"以上-設定"lv2_start"未満のIssueは設定"lv1_class"classを持つ' do
+  test 'issue.css_classesはバージョン変更回数が設定"lv1_start"以上-設定"lv2_start"未満の場合、設定"lv1_class"のclass名を含む' do
     @settings[:lv2_start].times do |i|
       issue = Issue.first
 
@@ -67,7 +65,7 @@ class IssueTest < ActiveSupport::TestCase
     end
   end
 
-  test 'バージョン変更回数が設定"lv2_start"以上-設定"lv3_start"未満のIssueは設定"lv2_class"classを持つ' do
+  test 'issue.css_classesはバージョン変更回数が設定"lv2_start"以上-設定"lv3_start"未満の場合、設定"lv2_class"のclass名を含む' do
     @settings[:lv3_start].times do |i|
       issue = Issue.first
 
@@ -82,7 +80,7 @@ class IssueTest < ActiveSupport::TestCase
     end
   end
 
-  test 'バージョン変更回数が設定"lv3_start"より大きいIssueは設定"lv3_class"classを持つ' do
+  test 'issue.css_classesはバージョン変更回数が設定"lv3_start"より大きい場合、設定"lv3_class"のclass名を含む' do
     (@settings[:lv3_start]+1).times do |i|
       issue = Issue.first
 

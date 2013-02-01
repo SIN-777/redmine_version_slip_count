@@ -11,6 +11,7 @@ Redmine::Plugin.register :redmine_version_slip_count do
     :lv1_start => 2,
     :lv2_start => 4,
     :lv3_start => 6,
+    :lv0_class => 'version-slip-lv-0',
     :lv1_class => 'version-slip-lv-1',
     :lv2_class => 'version-slip-lv-2',
     :lv3_class => 'version-slip-lv-3',
