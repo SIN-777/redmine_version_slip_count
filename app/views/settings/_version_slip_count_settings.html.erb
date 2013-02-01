@@ -1,0 +1,78 @@
+<style>
+  td, th {
+    padding: 10px 10px;
+  }
+</style>
+
+<p>
+<table>
+  <tr>
+    <th> </th>
+    <th> from </th>
+    <th> </th>
+    <th> to </th>
+    <th> class name </th>
+  </tr>
+
+  <tr id="lv0">
+    <th> LV0: </th>
+    <td style="text-align: right">
+      <div> 0 </div>
+    </td>
+    <td style="text-align: center"> - </td>
+    <td>
+      <div>(lv1_start - 1)</div>
+    </td>
+    <td style="text-align: right;">
+      <div><%= text_field_tag('settings[lv0_class]', @settings['lv0_class'], :style => 'width: 200px')%></div>
+    </td>
+  </tr>
+
+  <tr id="lv1">
+    <th> LV1: </th>
+    <td style="text-align: right">
+      <div><%= text_field_tag('settings[lv1_start]', @settings['lv1_start'], :style => 'width: 50px; text-align: right;')%></div>
+    </td>
+    <td style="text-align: center"> - </td>
+    <td>
+      <div>(lv2_start - 1)</div>
+    </td>
+    <td style="text-align: right">
+      <div><%= text_field_tag('settings[lv1_class]', @settings['lv1_class'], :style => 'width: 200px')%></div>
+    </td>
+  </tr>
+
+  <tr id="lv2">
+    <th> LV2: </th>
+    <td style="text-align: right">
+      <div><%= text_field_tag('settings[lv2_start]', @settings['lv2_start'], :style => 'width: 50px; text-align: right;')%></div>
+    </td>
+    <td style="text-align: center"> - </td>
+    <td>
+      <div>(lv3_start - 1)</div>
+    </td>
+    <td style="text-align: right">
+      <div><%= text_field_tag('settings[lv2_class]', @settings['lv2_class'], :style => 'width: 200px')%></div>
+    </td>
+  </tr>
+
+  <tr id="lv3">
+    <th> LV3: </th>
+    <td style="text-align: right">
+      <div><%= text_field_tag('settings[lv3_start]', @settings['lv3_start'], :style => 'width: 50px; text-align: right;')%></div>
+    </td>
+    <td style="text-align: center"> - </td>
+    <td>
+      <div>INFINITY</div>
+    </td>
+    <td style="text-align: right">
+      <div><%= text_field_tag('settings[lv3_class]', @settings['lv3_class'], :style => 'width: 200px')%></div>
+    </td>
+  </tr>
+</table>
+</p>
+
+
+
+
+
