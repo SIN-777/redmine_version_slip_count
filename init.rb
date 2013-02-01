@@ -14,7 +14,7 @@ Redmine::Plugin.register :redmine_version_slip_count do
     :lv1_class => 'version-slip-lv-1',
     :lv2_class => 'version-slip-lv-2',
     :lv3_class => 'version-slip-lv-3',
-  }, :partial => 'settings/form'
+  }, :partial => 'settings/version_slip_count_settings'
 end
 
 require File.dirname(__FILE__) + '/lib/version_slip_count_issue_patch.rb'
