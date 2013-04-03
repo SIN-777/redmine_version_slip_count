@@ -5,8 +5,8 @@ Redmine::Plugin.register :redmine_version_slip_count do
   author 'SIN-777'
   description "Count up when issue's fixed_version is slipped."
   version '0.0.1'
-  url 'http://example.com/path/to/plugin'
-  author_url 'http://example.com/about'
+  url 'http://example.com/abou://github.com/SIN-777/redmine_version_slip_count'
+  author_url ''
   settings :default => {
     :lv1_start => 2,
     :lv2_start => 4,
